@@ -7,11 +7,13 @@ import {
 } from "react-router-dom";
 import MainLayouts from './layouts/MainLayouts';
 import Header from './components/Home/Banner/Header/Header';
+import ErrorPage from './Pages/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts></MainLayouts>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
