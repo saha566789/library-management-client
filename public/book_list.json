@@ -1,0 +1,147 @@
+[
+    {
+      "Image": "https://i.ibb.co/PcZNJsq/novel-1.jpg",
+      "Name": "frankenstein",
+      "Quantity": "10",
+      "Author": "Mary Shelley",
+      "Category": "Novel",
+      "Description": "A captivating novel that takes you on an emotional journey.Victor begins by telling of his childhood. Born in Naples, Italy, into a wealthy Genevan family, Victor and his younger brothers, Ernest and William, are sons of Alphonse Frankenstein and the former Caroline Beaufort. From a young age, Victor has a strong desire to understand the world. He is obsessed with studying theories of alchemists, though when he is older he realizes that such theories are considerably outdated. When Victor is five years old, his parents adopt Elizabeth Lavenza (the orphaned daughter of an expropriated Italian nobleman) whom Victor later marries. ",
+      "Rating": 4.5
+    },
+    {
+      "Image": "https://i.ibb.co/7pR884q/drama-1.jpg",
+      "Name": "Hamlet",
+      "Quantity": "5",
+      "Author": "William Shakespeare",
+      "Category": "Drama",
+      "Description": "A gripping drama with complex characters and relationships.Prince Hamlet of Denmark is the son of the recently deceased King Hamlet, and nephew of King Claudius, his father's brother and successor. Claudius hastily married King Hamlet's widow, Gertrude, Hamlet's mother, and took the throne for himself. Denmark has a long-standing feud with neighbouring Norway, in which King Hamlet slew King Fortinbras of Norway in a battle some years ago. Although Denmark defeated Norway and the Norwegian throne fell to King Fortinbras's infirm brother, Denmark fears that an invasion led by the dead Norwegian king's son, Prince Fortinbras, is imminent",
+      "Rating": 4.2
+    },
+    {
+      "Image": "https://i.ibb.co/s9kh3rR/history-1.jpg",
+      "Name": "Guns, Germs, and Steel",
+      "Quantity":"6",
+      "Author": " Jared Diamond",
+      "Category": "History",
+      "Description": "The first step towards civilization is the move from nomadic hunter-gatherer to rooted agrarian society. Several conditions are necessary for this transition to occur: access to high-carbohydrate vegetation that endures storage; a climate dry enough to allow storage; and access to animals docile enough for domestication and versatile enough to survive captivity. Control of crops and livestock leads to food surpluses. Surpluses free people to specialize in activities other than sustenance and support population growth. The combination of specialization and population growth leads to the accumulation of social and technological innovations which build on each other. Large societies develop ruling classes and supporting bureaucracies, which in turn lead to the organization of nation-states and empires.",
+      "Rating": 4.8
+    },
+    {
+      "Image": "https://i.ibb.co/fxNXxYJ/sci-fi-1.webp",
+      "Name": "Dune",
+      "Quantity": "7",
+      "Author": " Frank Herbert",
+      "Category": "Sci-Fi",
+      "Description": "Duke Leto Atreides of House Atreides, ruler of the ocean planet Caladan, is assigned by the Padishah Emperor Shaddam IV to serve as fief ruler of the planet Arrakis. Although Arrakis is a harsh and inhospitable desert planet, it is of enormous importance because it is the only planetary source of melange, a unique and incredibly valuable substance that extends human youth, vitality and lifespan. It is also through the consumption of spice that Spacing Guild Navigators are able to effect safe interstellar travel. Shaddam, jealous of Duke Leto Atreides's rising popularity in the Landsraad, sees House Atreides as a potential future rival and threat, so conspires with House Harkonnen, the former stewards of Arrakis and the longstanding enemies of House Atreides, to destroy Leto and his family after their arrival. Leto is aware his assignment is a trap of some kind, but is compelled to obey the Emperor's orders anyway.",
+      "Rating": 4.0
+    },
+    {
+      "Image": "https://i.ibb.co/3sgMPMP/novel-2.jpg",
+      "Name": "Jane Eyre",
+      "Quantity": "8",
+      "Author": "Charlotte Brontë",
+      "Category": "Novel",
+      "Description": "A heartwarming novel about love, friendship, and self-discovery.Jane Eyre, aged 10, lives at Gateshead Hall with her maternal uncle's family, the Reeds, as a result of her uncle's dying wish. Jane was orphaned several years earlier when her parents died of typhus. Jane's uncle, Mr Reed, was the only one in the Reed family who was kind to Jane. Jane's aunt, Sarah Reed, dislikes her and treats her as a burden. Mrs Reed also discourages her three children from associating with Jane. As a result Jane becomes defensive against her cruel judgement. ",
+      "Rating": 4.7
+    },
+    {
+      "Image": "https://i.ibb.co/QcpYX6t/drama-2.jpg",
+      "Name": "Othello",
+      "Quantity": "3",
+      "Author": " William Shakespeare",
+      "Category": "Drama",
+      "Description": "A thought-provoking drama exploring societal issues.Roderigo, a wealthy and dissolute gentleman, complains to his friend Iago, an ensign, that Iago has not told him about the recent secret marriage between Desdemona, the daughter of Brabantio, a senator, and Othello, a Moorish general in the Venetian army. Roderigo is upset because he loves Desdemona and had asked her father, Brabantio, for her hand in marriage, which Brabantio denied him.",
+      "Rating": 4.3
+    },
+    {
+      "Image": "https://i.ibb.co/sgY0z09/history-2.jpg",
+      "Name": "Salt",
+      "Quantity": "8",
+      "Author": "Mark Kurlansky",
+      "Category": "History",
+      "Description": "Best-selling author Mark Kurlansky turns his attention to a common household item with a long and intriguing history: salt. The only rock we eat, salt has shaped civilization from the very beginning, and its story is a glittering, often surprising part of the history of humankind. A substance so valuable it served as currency, salt has influenced the establishment of trade routes and cities, provoked and financed wars, secured empires, and inspired revolutions.  Populated by colorful characters and filled with an unending series of fascinating details, Salt is a supremely entertaining, multi-layered masterpiece.",
+      "Rating": 4.6
+    },
+    {
+      "Image": "https://i.ibb.co/DYPDC9M/sci-fi-2.jpg",
+      "Name": "Ender's Game",
+      "Quantity": "3",
+      "Author": "Author 8",
+      "Category": "Sci-Fi",
+      "Description": "War breaks out between humans and an insect-like alien race called the Formics. The humans achieve a narrow victory then create the International Fleet (I.F.) and train gifted children to become commanders at their orbiting Battle School.",
+      "Rating": 4.1
+    },
+    {
+      "Image": "https://i.ibb.co/jMRP2jC/novel-3.jpg",
+      "Name": "Wuthering Heights ",
+      "Quantity": "6",
+      "Author": "Emily Jane Brontë",
+      "Category": "Novel",
+      "Description": "An enchanting novel that transports you to a different world.Thirty years earlier, the Earnshaws live at Wuthering Heights with their two children, Hindley and Catherine, and a servant—Nelly herself. Returning from a trip to Liverpool, Earnshaw brings home a young orphan whom he names Heathcliff. Earnshaw treats the boy as his favourite. His own children he neglects, especially after his wife dies. Hindley beats Heathcliff, who gradually becomes close friends with Catherine.",
+      "Rating": 4.4
+    },
+    {
+      "Image": "https://i.ibb.co/3W6W27T/drama-3.jpg",
+      "Name": "Brave New World",
+      "Quantity": "6",
+      "Author": " Aldous Huxley",
+      "Category": "Drama",
+      "Description": "A moving drama that delves into the complexities of human relationships.Huxley wrote Brave New World whilst living in Sanary-sur-Mer, France, in the four months from May to August 1931.[13][14][15] By this time, Huxley had already established himself as a writer and social satirist. He was a contributor to Vanity Fair and Vogue magazines, and had published a collection of his poetry (The Burning Wheel, 1916) and four successful satirical novels: Crome Yellow (1921), Antic Hay (1923), Those Barren Leaves (1925), and Point Counter Point (1928). Brave New World was Huxley's fifth novel and first dystopian work.",
+      "Rating": 4.9
+    },
+    {
+      "Image": "https://i.ibb.co/JdSM7x5/history-3.jpg",
+      "Name": "1776",
+      "Quantity": "5",
+      "Author": "David McCullough",
+      "Category": "History",
+      "Description": "America’s beloved and distinguished historian presents, in a book of breathtaking excitement, drama, and narrative force, the stirring story of the year of our nation’s birth, 1776, interweaving, on both sides of the Atlantic, the actions and decisions that led Great Britain to undertake a war against her rebellious colonial subjects and that placed America’s survival in the hands of George Washington.",
+      "Rating": 4.2
+    },
+    {
+      "Image": "https://i.ibb.co/zXrBwcK/sci-fi-3.jpg",
+      "Name": "Cinder",
+      "Quantity": "6",
+      "Author": "Marissa Meyer",
+      "Category": "Sci-Fi",
+      "Description": "Humans and androids crowd the raucous streets of New Beijing. A deadly plague ravages the population. From space, a ruthless Lunar people watch, waiting to make their move. No one knows that Earth’s fate hinges on one girl. . . . Cinder, a gifted mechanic, is a cyborg.",
+      "Rating": 4.8
+    },
+    {
+      "Image": "https://i.ibb.co/0Qc92GY/novel-4.jpg",
+      "Name": "Emma",
+      "Quantity": "7",
+      "Author": " Jane Austen",
+      "Category": "Novel",
+      "Description": "A beautifully written novel that explores the human spirit.Emma Woodhouse's friend and former governess, Miss Taylor, has just married Mr Weston. Having introduced them, Emma takes credit for their marriage and decides that she likes matchmaking. After returning home to Hartfield, Emma forges ahead with her new interest against the advice of her friend Mr Knightley, who is also brother-in-law to Emma's elder sister Isabella. ",
+      "Rating": 4.5
+    },
+    {
+      "Image": "https://i.ibb.co/3fVHtLv/drama-4.jpg",
+      "Name": "Nineteen Eighty-Four ",
+      "Quantity": "4",
+      "Author": " George Orwell",
+      "Category": "Drama",
+      "Description": "A gripping drama with complex characters and relationships.",
+      "Rating": 4.3
+    },
+    {
+      "Image": "https://i.ibb.co/hM2VRrW/history-4.jpg",
+      "Name": "Truman",
+      "Quantity": "3",
+      "Author": " David McCullough",
+      "Category": "History",
+      "Description": "The Pulitzer Prize–winning biography of Harry S. Truman, whose presidency included momentous events from the atomic bombing of Japan to the outbreak of the Cold War and the Korean War, told by America’s beloved and distinguished historian.",
+      "Rating": 4.6
+    },
+    {
+      "Image": "https://i.ibb.co/f22hXXR/sci-fi-4.jpg",
+      "Name": "Scythe",
+      "Quantity":"2",
+      "Author": " Neal Shusterman",
+      "Category": "Sci-Fi",
+      "Description": "A pulse-pounding sci-fi thriller with a mysterious plot.A world with no hunger, no disease, no war, no misery. Humanity has conquered all those things, and has even conquered death. Now scythes are the only ones who can end life—and they are commanded to do so, in order to keep the size of the population under control.",
+      "Rating": 4.7
+    }
+  ]
+  

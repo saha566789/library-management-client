@@ -8,6 +8,8 @@ import {
 import MainLayouts from './layouts/MainLayouts';
 import Header from './components/Home/Banner/Header/Header';
 import ErrorPage from './Pages/ErrorPage';
+import BookProduct from './components/Products/BookProduct';
+import AllBooks from './components/Allbooks/AllBooks';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,15 @@ const router = createBrowserRouter([
         element: <Header></Header>,
         loader:()=>fetch('/book_category.json')
       },
+      {
+        path:"/libraries/:category_name",
+        element:<BookProduct></BookProduct>,
+        loader:({params}) =>fetch(`http://localhost:5000/libraries/${params.category_name}`)
+      },
+      {
+        path:'/allBooks',
+        element:<AllBooks></AllBooks>
+      }
     ],
   },
 ]);
