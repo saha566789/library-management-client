@@ -1,10 +1,37 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Hooks/AuthProvider";
 
 
 const BookDetails = () => {
     const details = useLoaderData(true)
     console.log(details)
-    const {_id,Image,Name,Author,Quantity,Rating,Description} = details
+    const {_id,Image,Name,Author,Quantity,Category,Description} = details
+      const {user} = useContext(AuthContext)
+
+      const closeModal = () => {
+        const modal = document.getElementById("my_modal_5");
+        modal.close();
+      };
+
+
+    const handleSubmit = (e)=>{
+        e.preventDefault()
+        const form = e.target;
+        // const name = form.name.value;
+        // const email =form.email.value;
+        const returnDate = form.returnDate.value;
+        const submit = {
+            user:user.displayName,
+            email:user.email,  
+            returnDate,
+            book:_id,
+            Image,
+           Category
+
+        }
+        console.log(submit)
+    }
     return (
         <div>
             <div className="max-w-6xl mx-auto flex gap-4 mt-4">
@@ -16,30 +43,41 @@ const BookDetails = () => {
     
                  {/* Open the modal using document.getElementById('ID').showModal() method */}
                 {/* Open the modal using document.getElementById('ID').showModal() method */}
-<button className="btn" onClick={()=>document.getElementById('my_modal_5').showModal()}>Borrow</button>
+<button className="btn bg-yellow-700 text-white" onClick={()=>document.getElementById('my_modal_5').showModal()}>Borrow</button>
 <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
   <div className="modal-box">
 
-  <form className="card-body">
-       
+  <form onSubmit={handleSubmit} className="card-body">
+        {/* <div className="form-control">
+          <label className="label">
+            <span className="label-text">Name</span>
+          </label>
+          <input type="text" name="name" defaultValue={user?.displayName} placeholder="Name" className="input input-bordered" required />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Email</span>
+          </label>
+          <input type="email" name="email" defaultValue={user?.email} placeholder="Email" className="input input-bordered" required />
+         
+        </div> */}
         <div className="form-control">
           <label className="label">
             <span className="label-text">Return Date</span>
           </label>
-          <input type="date" name="date" placeholder="data" className="input input-bordered" required id="" />
+          <input type="date" name="returnDate" placeholder="data" className="input input-bordered" required id="" />
          
         </div>
-        
-      </form>
-
-
-
-    <div className="modal-action">
+        <input onClick={closeModal} type="submit" value="Submit" className="input input-bordered"  />
+        {/* <div className="modal-action">
       <form method="dialog">
-        {/* if there is a button in form, it will close the modal */}
-        <button className="btn">Submit</button>
+       
+       <input type="submit" value="Submit" className="input input-bordered"  />
       </form>
-    </div>
+    </div> */}
+      </form>
+
+    
   </div>
 </dialog>
                    
