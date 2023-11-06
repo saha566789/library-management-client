@@ -1,3 +1,4 @@
+
 import Star from "../Rating/Star";
 
 const BookCard = ({book}) => {

@@ -10,6 +10,11 @@ import Header from './components/Home/Banner/Header/Header';
 import ErrorPage from './Pages/ErrorPage';
 import BookProduct from './components/Products/BookProduct';
 import AllBooks from './components/Allbooks/AllBooks';
+import AddBook from './components/Addbook/AddBook';
+import AuthProvider from './Hooks/AuthProvider';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+import PrivateRoutes from './Routes/PrivateRoutes';
 
 const router = createBrowserRouter([
   {
@@ -29,8 +34,21 @@ const router = createBrowserRouter([
       },
       {
         path:'/allBooks',
-        element:<AllBooks></AllBooks>
-      }
+        element:<PrivateRoutes><AllBooks></AllBooks></PrivateRoutes>,
+        loader:()=> fetch('http://localhost:5000/libraries')
+      },
+     {
+      path:'/addBook',
+      element:<PrivateRoutes><AddBook></AddBook></PrivateRoutes>
+     },
+     {
+      path:'/login',
+      element:<Login></Login>
+     },
+     {
+      path:'/register',
+      element:<Register></Register>
+     }
     ],
   },
 ]);
@@ -38,6 +56,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <RouterProvider router={router} />
+ <AuthProvider>
+ <RouterProvider router={router} />
+ </AuthProvider>
   </React.StrictMode>,
 )
