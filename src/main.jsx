@@ -15,6 +15,7 @@ import AuthProvider from './Hooks/AuthProvider';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import PrivateRoutes from './Routes/PrivateRoutes';
+import BookDetails from './components/Products/BookDetails';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
         path:"/libraries/:category_name",
         element:<BookProduct></BookProduct>,
         loader:({params}) =>fetch(`http://localhost:5000/libraries/${params.category_name}`)
+      },
+      {
+         path:'/bookDetails/:id',
+         element:<BookDetails></BookDetails>,
+         loader:({params})=>fetch(`http://localhost:5000/bookDetails/${params.id}`)
       },
       {
         path:'/allBooks',

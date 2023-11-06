@@ -1,8 +1,9 @@
 
+import { Link } from "react-router-dom";
 import Star from "../Rating/Star";
 
 const BookCard = ({book}) => {
-    const {Image,Name,Author,Category,Rating} = book
+    const {_id,Image,Name,Author,Category,Rating} = book
     return (
         <div className="card  bg-base-100 shadow-xl">
   <figure><img className="h-96" src={Image} alt="Shoes" /></figure>
@@ -12,7 +13,7 @@ const BookCard = ({book}) => {
     <Star Rating={Rating}></Star>
 
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">View Details</button>
+    <Link to={`/bookDetails/${_id}`}><button className="btn btn-primary">View Details</button></Link>
     </div>
   </div>
 </div>
