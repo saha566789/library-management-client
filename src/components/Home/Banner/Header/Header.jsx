@@ -1,11 +1,21 @@
-import { useLoaderData } from "react-router-dom";
+
 import BookCategory from "../../../Categories/BookCategory";
 import Banner from "../Banner";
+import { useEffect, useState } from "react";
+
 
 
 const Header = () => {
-    const categories = useLoaderData()
-    console.log(categories)
+    // const categories = useLoaderData()
+    // console.log(categories)
+    const [categories,setCategory] = useState([])
+    useEffect(()=>{
+        fetch('http://localhost:5000/categories')
+        .then(res=> res.json())
+        .then(data =>{
+           setCategory(data)
+        })
+    },[])
     return (
         <div>
             <Banner></Banner>

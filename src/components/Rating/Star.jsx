@@ -9,10 +9,10 @@ const Star = ({Rating}) => {
        return <span key={index}>
        {
         Rating > index +1 ? 
-      <FaStar className='icon'></FaStar>
+      <FaStar className='icon text-yellow-400'></FaStar>
         : Rating > number
-         ? <FaStarHalfAlt className='icon'></FaStarHalfAlt> 
-         : <AiFillStar className='icon'></AiFillStar>
+         ? <FaStarHalfAlt className='icon text-yellow-400'></FaStarHalfAlt> 
+         : <AiFillStar className='icon text-yellow-400'></AiFillStar>
        }
        </span>
     })

@@ -16,6 +16,12 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import PrivateRoutes from './Routes/PrivateRoutes';
 import BookDetails from './components/Products/BookDetails';
+import { Toaster } from 'react-hot-toast';
+import BorrowedBooks from './Pages/BorrowBook/BorrowedBooks';
+import UpdateBook from './components/Allbooks/UpdateBook'
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -26,7 +32,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Header></Header>,
-        loader:()=>fetch('/book_category.json')
+        // loader:()=>fetch('/book_category.json')
       },
       {
         path:"/libraries/:category_name",
@@ -48,6 +54,16 @@ const router = createBrowserRouter([
       element:<PrivateRoutes><AddBook></AddBook></PrivateRoutes>
      },
      {
+       path:'/borrowed',
+       element:<PrivateRoutes><BorrowedBooks></BorrowedBooks></PrivateRoutes>,
+      
+     },
+     {
+        path:'/updateBook/:id',
+        element:<UpdateBook></UpdateBook>,
+        loader:({params})=>fetch(`http://localhost:5000/bookDetails/${params.id}`)
+     },
+     {
       path:'/login',
       element:<Login></Login>
      },
@@ -64,6 +80,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
  <AuthProvider>
  <RouterProvider router={router} />
+ <Toaster/>
  </AuthProvider>
   </React.StrictMode>,
 )
