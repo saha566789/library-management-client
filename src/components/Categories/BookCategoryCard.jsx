@@ -10,7 +10,7 @@ const BookCategoryCard = ({category}) => {
     <h2 className="card-title">{category_name}</h2>
     
     <div className="card-actions justify-start">
-     <Link to={`/libraries/${category_name}`}> <button className="btn btn-primary">{relevant_button}</button></Link>
+     <Link to={`/libraries/${category_name}`}> <button className="btn bg-yellow-500">{relevant_button}</button></Link>
     </div>
   </div>
 </div>

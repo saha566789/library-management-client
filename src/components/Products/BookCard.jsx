@@ -8,12 +8,12 @@ const BookCard = ({book}) => {
         <div className="card  bg-base-100 shadow-xl">
   <figure><img className="h-96" src={Image} alt="Shoes" /></figure>
   <div className="card-body">
-    <h2 className="card-title">{Name} <span className="text-xs">{Author}</span></h2>
+    <h2 className="card-title">{Name} <span className="text-xs text-red-600">{Author}</span></h2>
     <p>{Category}</p>
     <Star Rating={Rating}></Star>
 
     <div className="card-actions justify-end">
-    <Link to={`/bookDetails/${_id}`}><button className="btn btn-primary">View Details</button></Link>
+    <Link to={`/bookDetails/${_id}`}><button className="btn bg-red-300">View Details</button></Link>
     </div>
   </div>
 </div>
