@@ -1,24 +1,24 @@
 [
     {
-      "id": "1",
+      
       "category_name": "History",
       "relevant_image": "https://i.ibb.co/MSPJnvJ/historybook.jpg",
       "relevant_button": "Explore History Books"
     },
     {
-      "id":"2",
+      
       "category_name": "Novel",
       "relevant_image": "https://i.ibb.co/Sy8CHdj/novel.jpg",
       "relevant_button": "Discover Novels"
     },
     {
-      "id": "3",
+      
       "category_name": "Sci-Fi",
       "relevant_image": "https://i.ibb.co/Nj8D19n/sci-fi-23.jpg",
       "relevant_button": "Explore Sci-Fi Worlds"
     },
     {
-      "id":"4",
+      
       "category_name": "Drama",
       "relevant_image": "https://i.ibb.co/gm36r62/drama.jpg",
       "relevant_button": "Discover Dramatic Tales"

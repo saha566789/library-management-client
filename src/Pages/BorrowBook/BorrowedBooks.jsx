@@ -20,7 +20,8 @@ const BorrowedBooks = () => {
     }, [url]);
 
 
-    const handleDelete =(id,Quantity,_id) =>{
+    const handleDelete =(id,Quantity,book_id) =>{
+        console.log(Quantity)
         fetch(`http://localhost:5000/borrow/${id}`, {
                 method: 'DELETE'
             })
@@ -33,25 +34,30 @@ const BorrowedBooks = () => {
                        setBorrowBook(remaining);
                     }
                 })
-
-                // fetch(`http://localhost:5000/borrow`,{ 
-                //     method:'PATCH',
-                //     headers:{
-                //         'content-type': 'application/json'
-                //     },
-                //     body:JSON.stringify({Quantity:(Quantity+1),id:_id})
+                 let data ={Quantity:(Quantity),id:book_id}
+                 console.log(data)
+                // const data = {Quantity:Quantity}
+                fetch(`http://localhost:5000/borrow/${book_id}`,{ 
+                    
+                    method:'PATCH',
+                    headers:{
+                        'content-type': 'application/json'
+                    },
+                    body:JSON.stringify(data)
                    
-                //  })
-                //  .then(res => res.json())
-                //    .then(data =>{
-                //     console.log(data)
-                //     if(data.modifiedCount>0){
-                //         toast.success('You have borrowed a book.')
-                //     }
-                //    })
+                 })
+                 .then(res => res.json())
+                   .then(data =>{
+                    console.log(data)
+                    // if(data.modifiedCount>0){
+                    //     toast.success('You have borrowed a book.')
+                    // }
+                   })
     }
     return (
-        <div>
+       <div>
+        {
+            borrowBook.length?  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {
                 borrowBook.map(borrow=><BorrowCard
                 key={borrow._id}
@@ -59,7 +65,9 @@ const BorrowedBooks = () => {
                 handleDelete={handleDelete}
                 ></BorrowCard>)
             }
-        </div>
+        </div> :<div className="text-center text-lg lg:text-5xl p-20 lg:p-44">NO BorrowBooks available</div>
+        }
+       </div>
     );
 };
 

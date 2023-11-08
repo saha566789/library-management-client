@@ -18,15 +18,15 @@ const BookDetails = () => {
     
     const [borrowed,setBorrowed] = useState({})
 
-
+    
     const closeModal = () => {
         const modal = document.getElementById("my_modal_5");
         modal.close();
     };
 
    let borrowBooked= Boolean(borrowed)
-   console.log(borrowed)
-
+   console.log(borrowBooked)
+   
    useEffect(()=>{
     fetch(`http://localhost:5173/borrowBook/${id}?email=${user.email}`)
     .then(res=>res.json())
@@ -52,7 +52,8 @@ const BookDetails = () => {
             book_id: _id,
             Image,
             Category,
-            Name
+            Name,
+            Quantity
 
         }
 
@@ -61,7 +62,7 @@ const BookDetails = () => {
         //   }
       
           console.log(submit)
-
+     
        fetch('http://localhost:5000/borrow',{
         method:'POST',
         headers:{
@@ -76,38 +77,38 @@ const BookDetails = () => {
             toast.success('You have borrowed a book.')
         }
        })
-
+       const quantity = {Quantity:(Quantity-1),id:_id}
      fetch(`http://localhost:5000/bookDetails`,{ 
         method:'PATCH',
         headers:{
             'content-type': 'application/json'
         },
-        body:JSON.stringify({Quantity:(Quantity-1),id:_id})
+        body:JSON.stringify(quantity)
        
      })
      .then(res => res.json())
        .then(data =>{
         console.log(data)
-        if(data.modifiedCount>0){
-            toast.success('You have borrowed a book.')
-        }
+        // if(data.modifiedCount>0){
+        //     toast.success('You have borrowed a book.')
+        // }
        })
 
     }
     return (
         <div>
-            <div className="max-w-6xl mx-auto flex gap-4 mt-4">
+            <div className="max-w-6xl mx-auto flex lg:flex-row flex-col gap-4 mt-4">
                 <img className="h-96" src={Image} alt="" />
-                <h2 className="text-5xl">{Name} <span> <p className="text-xs font-bold">({Quantity}* Available now)</p>
+                <h2 className="lg:text-5xl text-xl">{Name} <span> <p className="text-xs font-bold">({Quantity}* Available now)</p>
                     <p className="text-xs">Written by{Author}</p>
-                    <p className="text-2xl">{Description}</p>
+                    <p className="lg:text-2xl text-lg">{Description}</p>
                     <button className="border h-10 w-28 mr-3 text-lg font-medium  border-black">Read</button>
 
                     {/* Open the modal using document.getElementById('ID').showModal() method */}
                     {/* Open the modal using document.getElementById('ID').showModal() method */}
                         
 {
-    !borrowBooked || Quantity<1? <button className="btn bg-yellow-700 text-white" 
+    !borrowBooked|| Quantity<1? <button className="btn bg-yellow-700 text-white" 
     onClick={() => document.getElementById('my_modal_5').showModal()}
     disabled
     // disabled={bookQuantity === 0}
