@@ -6,14 +6,15 @@ import { Link, Navigate, useLocation } from "react-router-dom";
 
 
 
-import { useContext } from "react";
+
 import Swal from "sweetalert2";
-import { AuthContext } from "../Hooks/AuthProvider";
+
+import useAuth from "../Hooks/useAuth";
 
 
 const Login = () => {
 
-    const {googleSign,signIn} =useContext(AuthContext)
+    const {googleSign,signIn} =useAuth()
     // const navigate= useNavigate()
     const location = useLocation().state
     console.log( "iii"+location)

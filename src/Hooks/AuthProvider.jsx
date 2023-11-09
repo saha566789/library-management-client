@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from "../firebase/firebase.config";
+import axios from "axios";
 
 
 export const  AuthContext = createContext(null)
@@ -29,9 +30,30 @@ const googleSign = () =>{
 
  useEffect(()=>{
     const unsubcribe = onAuthStateChanged(auth,(currentUser)=>{
+        const userEmail = currentUser?.email || user?.email;
+        const loggedUser = { email: userEmail };
         // console.log('state change')
         setUser(currentUser)
         setLoading(false)
+
+                // if user exists then issue a token
+                if(currentUser){
+                    
+                    axios.post('https://library-managment-server.vercel.app/jwt',loggedUser,{ withCredentials: true })
+                    .then(res=>{
+                        console.log('tttt',res.data)
+                    })
+                }
+                else {
+                    axios.post('https://library-managment-server.vercel.app/logout', loggedUser, {
+                        withCredentials: true
+                    })
+                        .then(res => {
+                            console.log(res.data);
+                        })
+                }
+
+
     })
     return(()=>{
         return unsubcribe()

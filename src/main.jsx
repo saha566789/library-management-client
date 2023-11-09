@@ -19,15 +19,20 @@ import BookDetails from './components/Products/BookDetails';
 import { Toaster } from 'react-hot-toast';
 import BorrowedBooks from './Pages/BorrowBook/BorrowedBooks';
 import UpdateBook from './components/Allbooks/UpdateBook'
+import ReadPage from './Pages/Read/ReadPage';
+import {
+ 
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 
 
-
-
+const queryClient = new QueryClient()
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts></MainLayouts>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -35,42 +40,47 @@ const router = createBrowserRouter([
         // loader:()=>fetch('/book_category.json')
       },
       {
-        path:"/libraries/:category_name",
-        element:<BookProduct></BookProduct>,
-        loader:({params}) =>fetch(`http://localhost:5000/libraries/${params.category_name}`)
+        path: "/libraries/:category_name",
+        element: <BookProduct></BookProduct>,
+        loader: ({ params }) => fetch(`https://library-managment-server.vercel.app/libraries/${params.category_name}`)
       },
       {
-         path:'/bookDetails/:id',
-         element:<PrivateRoutes><BookDetails></BookDetails></PrivateRoutes>,
-         loader:({params})=>fetch(`http://localhost:5000/bookDetails/${params.id}`)
+        path: '/bookDetails/:id',
+        element: <PrivateRoutes><BookDetails></BookDetails></PrivateRoutes>,
+        loader: ({ params }) => fetch(`https://library-managment-server.vercel.app/bookDetails/${params.id}`)
       },
       {
-        path:'/allBooks',
-        element:<PrivateRoutes><AllBooks></AllBooks></PrivateRoutes>,
-        loader:()=> fetch('http://localhost:5000/libraries')
+        path: '/allBooks',
+        element: <PrivateRoutes><AllBooks></AllBooks></PrivateRoutes>,
+        // loader:()=> fetch('https://library-managment-server.vercel.app/libraries')
       },
-     {
-      path:'/addBook',
-      element:<PrivateRoutes><AddBook></AddBook></PrivateRoutes>
-     },
-     {
-       path:'/borrowed',
-       element:<PrivateRoutes><BorrowedBooks></BorrowedBooks></PrivateRoutes>,
-      
-     },
-     {
-        path:'/updateBook/:id',
-        element:<UpdateBook></UpdateBook>,
-        loader:({params})=>fetch(`http://localhost:5000/bookDetails/${params.id}`)
-     },
-     {
-      path:'/login',
-      element:<Login></Login>
-     },
-     {
-      path:'/register',
-      element:<Register></Register>
-     }
+      {
+        path: '/addBook',
+        element: <PrivateRoutes><AddBook></AddBook></PrivateRoutes>
+      },
+      {
+        path: '/borrowed',
+        element: <PrivateRoutes><BorrowedBooks></BorrowedBooks></PrivateRoutes>,
+
+      },
+      {
+        path: "/bookDetails/read/:id",
+        element: <ReadPage></ReadPage>,
+        loader: ({ params }) => fetch(`https://library-managment-server.vercel.app/bookDetails/${params.id}`)
+      },
+      {
+        path: '/updateBook/:id',
+        element: <UpdateBook></UpdateBook>,
+        loader: ({ params }) => fetch(`https://library-managment-server.vercel.app/bookDetails/${params.id}`)
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
+      }
     ],
   },
 ]);
@@ -78,9 +88,13 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
- <AuthProvider>
- <RouterProvider router={router} />
- <Toaster/>
- </AuthProvider>
+
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+        <Toaster />
+      </AuthProvider>
+    </QueryClientProvider>
+
   </React.StrictMode>,
 )

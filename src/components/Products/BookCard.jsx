@@ -2,10 +2,13 @@
 import { Link } from "react-router-dom";
 import Star from "../Rating/Star";
 
+
 const BookCard = ({book}) => {
+
     const {_id,Image,Name,Author,Category,Rating} = book
     return (
         <div className="card  bg-base-100 shadow-xl">
+         
   <figure><img className="h-96" src={Image} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{Name} <span className="text-xs text-red-600">{Author}</span></h2>

@@ -1,17 +1,28 @@
-import { useLoaderData } from "react-router-dom";
+
 import AllBookCard from "./AllBookCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+
 
 
 const AllBooks = () => {
-    const allBooks = useLoaderData([])
-   const [available,setAvialable] = useState([])
+    const [allBooks2,setAllBooks] =useState([])
+//    const [available,setAvialable] = useState([])
 
+useEffect(()=>{
+    fetch('https://library-managment-server.vercel.app/libraries',{ credentials: 'include' })
+    .then(res=>res.json())
+    .then(data=>{
+       setAllBooks(data)
+    })
+},[])
 const handleAvialable =()=>{
-    const bookFillter = available.filter(allBook=>allBook.Quantity>0)
-    if(bookFillter){
-        setAvialable(bookFillter)
+    const bookFilter = allBooks2.filter(allBook=>allBook.Quantity>0)
+    console.log(bookFilter)
+    if(bookFilter){
+        setAllBooks(bookFilter)
     }
+
 }
     return (
         <div>
@@ -19,8 +30,8 @@ const handleAvialable =()=>{
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mx-4">
 
                 {
-                    allBooks.map(allBook => <AllBookCard
-                        key={allBook.id}
+                    allBooks2.map(allBook => <AllBookCard
+                        key={allBook._id}
                         allBook={allBook}
                     ></AllBookCard>)
                 }

@@ -5,9 +5,49 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+    <style>
+      body {
+          background-color: white;
+          color: black;
+          font-size: 25px;
+      }
+
+      .dark-mode {
+          background-color: black;
+          color: white;
+      }
+
+      .light-mode {
+          background-color: white;
+          color: black;
+      }
+    </style>
   </head>
   <body>
+    <div class="flex justify-end gap-1">
+      <button id="mode-toggle" class="border-4 border-red-300 text-xs">Toggle Mode</button>
+      <span id="mode-label" class="lg:text-xl text-xs">Light Mode</span>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      const body = document.body;
+      const modeToggle = document.getElementById("mode-toggle");
+      const modeLabel = document.getElementById("mode-label");
+      let isDarkMode = false;
+
+      modeToggle.addEventListener("click", function() {
+        if (isDarkMode) {
+          body.className = "light-mode";
+          modeLabel.innerText = "Light Mode";
+          isDarkMode = false;
+        } else {
+          body.className = "dark-mode";
+          modeLabel.innerText = "Dark Mode";
+          isDarkMode = true;
+        }
+      });
+    </script>
   </body>
 </html>

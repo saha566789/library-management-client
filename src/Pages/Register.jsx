@@ -1,16 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-
-import { useContext } from "react";
-
-
-
-import { AuthContext } from "../Hooks/AuthProvider";
 import Swal from "sweetalert2";
+import useAuth from "../Hooks/useAuth";
 
 
 const Register = () => {
 
-    const {createUser,googleSign,handleUpdateProfile} = useContext(AuthContext)
+    const {createUser,googleSign,handleUpdateProfile} = useAuth()
     const navigate = useNavigate()
 
 

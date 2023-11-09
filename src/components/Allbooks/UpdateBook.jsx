@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
-const AddBook = () => {
+const UpdateBook = () => {
     const books = useLoaderData()
     const { _id, Image, Name, Author, Quantity,Rating, Category, Description } = books
     const handleUpdate = (e) => {
@@ -21,7 +21,7 @@ const AddBook = () => {
         console.log(newProduct)
 
         
-        fetch(`http://localhost:5000/bookDetails/${_id}`,{
+        fetch(`https://library-managment-server.vercel.app/bookDetails/${_id}`,{
             method:'PUT',
             headers:{
              'content-type': 'application/json'
@@ -37,6 +37,7 @@ const AddBook = () => {
                     text: 'Product Updated Successfully',
                     icon: 'success',
                     confirmButtonText: 'Cool'
+                    
                 })
             }
         
@@ -135,4 +136,4 @@ const AddBook = () => {
     );
 };
 
-export default AddBook;
+export default UpdateBook;

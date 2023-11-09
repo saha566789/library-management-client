@@ -10,8 +10,18 @@ import toast from "react-hot-toast";
 const BorrowedBooks = () => {
     const {user} = useContext(AuthContext)
     const [borrowBook,setBorrowBook] = useState([])
+
+
+    // const { isPending, isError, error, data: borrowBook } = useQuery({
+    //     queryKey: ['users'],
+    //     queryFn: async () => {
+    //         const res = await fetch(`https://library-managment-server.vercel.app/borrow?email=${user?.email}`);
+    //         return res.json();
+    //     }
+    // })
+
    
-    const url = `http://localhost:5000/borrow?email=${user?.email}`;
+    const url = `https://library-managment-server.vercel.app/borrow?email=${user?.email}`;
     useEffect(() => {
 
         fetch(url)
@@ -22,7 +32,7 @@ const BorrowedBooks = () => {
 
     const handleDelete =(id,Quantity,book_id) =>{
         console.log(Quantity)
-        fetch(`http://localhost:5000/borrow/${id}`, {
+        fetch(`https://library-managment-server.vercel.app/borrow/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -37,7 +47,7 @@ const BorrowedBooks = () => {
                  let data ={Quantity:(Quantity),id:book_id}
                  console.log(data)
                 // const data = {Quantity:Quantity}
-                fetch(`http://localhost:5000/borrow/${book_id}`,{ 
+                fetch(`https://library-managment-server.vercel.app/borrow/${book_id}`,{ 
                     
                     method:'PATCH',
                     headers:{
@@ -54,6 +64,19 @@ const BorrowedBooks = () => {
                     // }
                    })
     }
+
+    // if (isPending) {
+    //     return <span className="loading loading-spinner text-primary"></span>
+    // }
+
+    // if (isError) {
+    //     return <p>{error.message}</p>
+    // }
+
+    
+
+
+
     return (
        <div>
         {
