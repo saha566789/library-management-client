@@ -1,8 +1,11 @@
-# React + Vite
+# BookNestor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Click here for the website live link: https://library-manage-fd2dd.web.app/
+<h2>Add 5 projects features</h2>
+<ol>
+<li>category button clicked show dynamic brand 4 products.</li>
+<li>view Details clicked show product details and borrow the book also.</li>
+<li>Update product clicked also updated a product.</li>
+<li>User can login with email and password.</li>
+<li>Also,Mobile and desktop device responsive.</li>
+</ol>
