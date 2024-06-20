@@ -29,7 +29,7 @@ const googleSign = () =>{
  }
 
  useEffect(()=>{
-    const unsubcribe = onAuthStateChanged(auth,(currentUser)=>{
+    const unsubcribe = onAuthStateChanged(auth,async(currentUser)=>{
         const userEmail = currentUser?.email || user?.email;
         const loggedUser = { email: userEmail };
         // console.log('state change')
@@ -39,9 +39,11 @@ const googleSign = () =>{
                 // if user exists then issue a token
                 if(currentUser){
                     
-                    axios.post('https://library-managment-server.vercel.app/jwt',loggedUser,{ withCredentials: true })
+                  await  axios.post('https://library-managment-server.vercel.app/jwt',loggedUser,{ withCredentials: true })
+                
                     .then(res=>{
-                        console.log('tttt',res.data)
+                    
+                    return    console.log('tttt',res.data)
                     })
                 }
                 else {
@@ -58,7 +60,7 @@ const googleSign = () =>{
     return(()=>{
         return unsubcribe()
     }) 
- },[])
+ },[user?.email])
 
 
  const handleUpdateProfile = (name,photo) =>{

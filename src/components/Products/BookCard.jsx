@@ -1,26 +1,28 @@
-
 import { Link } from "react-router-dom";
 import Star from "../Rating/Star";
 
+const BookCard = ({ book }) => {
+  const { _id, Image, Name, Author, Category, Rating } = book;
 
-const BookCard = ({book}) => {
+  return (
+    <div className="card bg-white shadow-lg rounded-lg overflow-hidden">
+      <img className="h-96 w-full object-cover" src={Image} alt={Name} />
+      <div className="p-4">
+        <h2 className="text-xl font-semibold text-gray-800">{Name}</h2>
+        <p className="text-sm text-gray-600">{Author}</p>
+        <p className="text-sm text-gray-600">{Category}</p>
+        <Star Rating={Rating} />
 
-    const {_id,Image,Name,Author,Category,Rating} = book
-    return (
-        <div className="card  bg-base-100 shadow-xl">
-         
-  <figure><img className="h-96" src={Image} alt="Shoes" /></figure>
-  <div className="card-body">
-    <h2 className="card-title">{Name} <span className="text-xs text-red-600">{Author}</span></h2>
-    <p>{Category}</p>
-    <Star Rating={Rating}></Star>
-
-    <div className="card-actions justify-end">
-    <Link to={`/bookDetails/${_id}`}><button className="btn bg-red-300">View Details</button></Link>
+        <div className="mt-4 flex justify-end">
+          <Link to={`/bookDetails/${_id}`}>
+            <button className="bg-red-300 hover:bg-red-400 text-white px-4 py-2 rounded-lg focus:outline-none">
+              View Details
+            </button>
+          </Link>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-    );
+  );
 };
 
 export default BookCard;
